@@ -23,6 +23,9 @@ jobs:
       - name: 3. Gradle 빌드
         run: ./gradlew clean build -x test
 
+      - name: 3.5 JAR 복사 대상 디렉터리 생성
+        run: mkdir -p /home/github-runner/app
+
       - name: 4. JAR 복사
         run: |
           cp build/libs/*.jar /home/github-runner/app/app.jar
